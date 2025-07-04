@@ -1,4 +1,4 @@
-##### Noted: This code repository will be updated after it is accepted.
+##### Noted: Currently, only experimental videos are available in this repository. The code will be updated after the paper is accepted.
 
 
 # A Method for Detecting Damage Fault in Overhead power lines Based on Aerial Images by Unmanned Aerial Vehicles
