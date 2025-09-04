@@ -1,4 +1,4 @@
-# A Method for Detecting Damage in Overhead Power Lines Based on Aerial Images by Unmanned Aerial Vehicles
+# UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery
 
 ### Repository Overview
 
@@ -27,9 +27,7 @@ If you find this repository useful in your research, please cite our paper once 
 @article{TPWRD2025_Zhang_UAVLineDamage,
   author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and
              Yichi Yang and Youmin Zhang},
-  title   = {A Method for Detecting Damage in Overhead Power Lines
-             Based on Aerial Images by Unmanned Aerial Vehicles},
-  journal = {IEEE Transactions on Power Delivery},
+  title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
   year    = {2025},
   volume  = {...},
   number  = {...},
