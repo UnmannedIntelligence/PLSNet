@@ -28,6 +28,7 @@ If you find this repository useful in your research, please cite our paper once 
   author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and
              Yichi Yang and Youmin Zhang},
   title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
+  journal = {IEEE Transactions on Power Delivery},
   year    = {2025},
   volume  = {...},
   number  = {...},
