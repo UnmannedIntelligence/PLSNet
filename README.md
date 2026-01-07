@@ -29,7 +29,7 @@ If you find this repository useful in your research, please cite our paper once 
              Yichi Yang and Youmin Zhang},
   title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
   journal = {IEEE Transactions on Power Delivery},
-  year    = {2025},
+  year    = {2026},
   volume  = {...},
   number  = {...},
   pages   = {...},
