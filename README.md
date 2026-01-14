@@ -24,7 +24,7 @@ These results demonstrate both high accuracy and practical real-time performance
 If you find this repository useful in your research, please cite our paper once it is published in *IEEE Transactions on Power Delivery*:
 
 ```text
-@article{TPWRD2025_Zhang_UAVLineDamage,
+@article{IEEE2025_Zhang_UAVLineDamage,
   author  = {Yulong Zhang, Xianghong Xue, Jing Xin, Lingxia Mu and Youmin Zhang},
   title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
   journal = {IEEE Transactions on Industrial Electronics},
