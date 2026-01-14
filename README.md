@@ -2,7 +2,7 @@
 
 ### Repository Overview
 
-This repository provides the experimental resources for our manuscript submitted to *IEEE Transactions on Industrial Electronics *. It contains source code, experimental data, and UAV flight videos for detecting damage in overhead transmission lines from aerial images.
+This repository provides the experimental resources for our manuscript submitted to *IEEE Transactions on Industrial Electronics*. It contains source code, experimental data, and UAV flight videos for detecting damage in overhead transmission lines from aerial images.
 
 ⚠️ **Note:** At present, only experimental/demo videos are available. The source code, trained weights (PLSNet & GAN-based detector), and the Power Line Damage Dataset (PLDD) will be uploaded after the manuscript is accepted.
 
