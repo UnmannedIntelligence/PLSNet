@@ -1,43 +1,74 @@
 # UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery
 
-### Repository Overview
+## Repository Overview
 
-This repository provides the experimental resources for our manuscript submitted to *IEEE Transactions on Industrial Electronics*. It contains source code, experimental data, and UAV flight videos for detecting damage in overhead transmission lines from aerial images.
+This repository hosts experimental resources for our manuscript submitted to **IEEE Transactions on Industrial Electronics (IEEE TIE)**. The work focuses on UAV-based damage detection for overhead power lines using aerial imagery. The repository will be updated to support reproducibility.
 
-⚠️ **Note:** At present, only experimental/demo videos are available. The source code, trained weights (PLSNet & GAN-based detector), and the Power Line Damage Dataset (PLDD) will be uploaded after the manuscript is accepted.
+⚠️ **Availability Notice (Under Review):**  
+At this stage, only **experimental and demo videos** are available. The following materials will be released **after the manuscript is accepted**:
+- Source code for **PLSNet** and the **GAN-based damage detector**
+- Trained weights and deployment scripts
+- The **Power Line Damage Dataset (PLDD)** and accompanying documentation
 
-## Abstract
+---
 
-Unmanned aerial vehicles (UAVs) enable flexible and safe inspection of overhead transmission lines, but detecting line damage from aerial images remains challenging due to slender targets, class imbalance, and real-time constraints.
+## Method Summary
 
-In this study, we propose a two-stage, UAV-deployable approach:
+We propose a UAV-deployable, two-stage pipeline.
 
-* **Lightweight power-line segmentation (PLSNet):** An enhanced U-Net with multi-branch downsampling fusion, multi-scale feature fusion, and attention. It reduces layers/channels while preserving accuracy, reaching **95.55% mIoU** and **87 FPS** on PLD500, and **74.61% mIoU / 85.46% F1** on PLD-UAV.
-* **GAN-based damage detection:** An encoder–decoder reconstruction network (GANomaly-style) that identifies defects via reconstruction loss and a defect discriminator. Using small kernels and fewer channels, it achieves high-speed inference and **99.09% accuracy** on our PLDD dataset.
-* **New damage dataset (PLDD):** 440 images (220 normal / 220 damaged) collected with a DJI M300 UAV and online supplementation, covering artificially induced and naturally occurring defects.
-* **Embedded deployment:** Implemented on NVIDIA Jetson Xavier NX with TensorRT; the complete onboard system runs at **\~9 FPS** during outdoor flight tests and is validated in two real-world environments using a DJI M300 UAV.
+- **Power-line segmentation (PLSNet)**  
+  A lightweight U-Net-based segmentation network with multi-branch downsampling fusion and multi-scale feature fusion. It is designed for thin-structure extraction under complex backgrounds while maintaining high inference efficiency.
 
-These results demonstrate both high accuracy and practical real-time performance, facilitating UAV-based grid inspection in the field.
+- **Damage detection via GAN-based reconstruction**  
+  A GANomaly-style encoder–decoder reconstruction network that identifies damage by combining reconstruction inconsistency and discriminator response. The network is streamlined using small convolution kernels and fewer feature channels for embedded inference.
+
+- **PLDD dataset**  
+  A balanced dataset containing **440 images** (**220 normal** and **220 damaged**) collected using a **DJI M300 UAV**, including **artificially induced damage samples** for systematic evaluation.
+
+- **Embedded deployment**  
+  The complete pipeline is deployed on an **NVIDIA Jetson Xavier NX** with TensorRT acceleration and validated through outdoor UAV flight tests in real inspection environments.
+
+---
+
+## Results Snapshot
+
+Representative results reported in the manuscript include:
+- **Segmentation performance** evaluated on **PLD500** and **PLD-UAV** using mIoU and related metrics
+- **Damage detection performance** evaluated on **PLDD** with **99.09% classification accuracy**
+- **Real-world validation** via outdoor UAV flight tests using a **DJI M300** platform
+
+> Note: runtime depends on deployment settings and pipeline configuration. The final release will include benchmarking scripts and environment specifications.
+
+---
+
+## Repository Structure
+
+- `videos/`  
+  Demo and flight-test videos
+
+- `docs/`  
+  Supplementary figures and usage notes (to be added)
+
+- `code/`  
+  Source code (to be released after acceptance)
+
+- `data/`  
+  PLDD dataset and annotations (to be released after acceptance)
+
+---
 
 ## Citation
 
-If you find this repository useful in your research, please cite our paper once it is published in *IEEE Transactions on Power Delivery*:
+If you use this repository in your research, please cite our paper after it is published. Final publication metadata will be updated here.
 
 ```text
-@article{IEEE2025_Zhang_UAVLineDamage,
-  author  = {Yulong Zhang, Xianghong Xue, Jing Xin, Lingxia Mu and Youmin Zhang},
+@article{Zhang2026_UAVLineDamage,
+  author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and Youmin Zhang},
   title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
   journal = {IEEE Transactions on Industrial Electronics},
   year    = {2026},
-  volume  = {...},
-  number  = {...},
-  pages   = {...},
-  doi     = {...}
+  volume  = {to appear},
+  number  = {to appear},
+  pages   = {to appear},
+  doi     = {to appear}
 }
-```
-
-## Contact
-
-For questions or collaborations, please contact:
-
-**Yulong Zhang** · [yulong.zhang@stu.xaut.edu.cn](mailto:yulong.zhang@stu.xaut.edu.cn)
