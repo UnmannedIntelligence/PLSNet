@@ -20,7 +20,7 @@ We propose a UAV-deployable, two-stage pipeline.
   A lightweight U-Net-based segmentation network with multi-branch downsampling fusion and multi-scale feature fusion. It is designed for thin-structure extraction under complex backgrounds while maintaining high inference efficiency.
 
 - **Damage detection via GAN-based reconstruction**  
-  A GANomaly-style encoder–decoder reconstruction network that identifies damage by combining reconstruction inconsistency and discriminator response. The network is streamlined using small convolution kernels and fewer feature channels for embedded inference.
+  A GANomaly-style encoder-decoder reconstruction network that identifies damage by combining reconstruction inconsistency and discriminator response. The network is streamlined using small convolution kernels and fewer feature channels for embedded inference.
 
 - **PLDD dataset**  
   A balanced dataset containing **440 images** (**220 normal** and **220 damaged**) collected using a **DJI M300 UAV**, including **artificially induced damage samples** for systematic evaluation.
@@ -39,23 +39,7 @@ Representative results reported in the manuscript include:
 
 > Note: runtime depends on deployment settings and pipeline configuration. The final release will include benchmarking scripts and environment specifications.
 
----
 
-## Repository Structure
-
-- `videos/`  
-  Demo and flight-test videos
-
-- `docs/`  
-  Supplementary figures and usage notes (to be added)
-
-- `code/`  
-  Source code (to be released after acceptance)
-
-- `data/`  
-  PLDD dataset and annotations (to be released after acceptance)
-
----
 
 ## Citation
 
@@ -63,12 +47,12 @@ If you use this repository in your research, please cite our paper after it is p
 
 ```text
 @article{Zhang2026_UAVLineDamage,
-  author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and Youmin Zhang},
+  author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and Yichi Yang and Youmin Zhang},
   title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
   journal = {IEEE Transactions on Industrial Electronics},
   year    = {2026},
-  volume  = {to appear},
-  number  = {to appear},
-  pages   = {to appear},
-  doi     = {to appear}
+  volume  = {},
+  number  = {},
+  pages   = {},
+  doi     = {}
 }
