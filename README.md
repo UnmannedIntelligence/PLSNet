@@ -1,58 +1,89 @@
-# UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery
+# Unmanned Aerial Vehicle-Based Damage Detection in Overhead Power Lines from Aerial Imagery
 
-## Repository Overview
+## Overview
 
-This repository hosts experimental resources for our manuscript submitted to **IEEE Transactions on Industrial Electronics (IEEE TIE)**. The work focuses on UAV-based damage detection for overhead power lines using aerial imagery. The repository will be updated to support reproducibility.
+This repository accompanies a manuscript prepared for submission to *Engineering Applications of Artificial Intelligence* (EAAI). The work investigates an artificial-intelligence-based system for detecting damage to overhead power lines from aerial imagery acquired by unmanned aerial vehicles (UAVs).
 
-⚠️ **Availability Notice (Under Review):**  
-At this stage, only **experimental and demo videos** are available. The following materials will be released **after the manuscript is accepted**:
-- Source code for **PLSNet** and the **GAN-based damage detector**
-- Trained weights and deployment scripts
-- The **Power Line Damage Dataset (PLDD)** and accompanying documentation
+The proposed system combines lightweight semantic segmentation, reconstruction-based anomaly detection, and onboard deployment to support practical power-line inspection.
 
----
+## Manuscript Status
 
-## Method Summary
+The manuscript is currently being prepared for submission to EAAI.
 
-We propose a UAV-deployable, two-stage pipeline.
+During the submission and peer-review stage, this repository provides selected demonstration materials. The following research materials are planned for public release after acceptance:
 
-- **Power-line segmentation (PLSNet)**  
-  A lightweight U-Net-based segmentation network with multi-branch downsampling fusion and multi-scale feature fusion. It is designed for thin-structure extraction under complex backgrounds while maintaining high inference efficiency.
+- Source code and trained models for PLSNet
+- Source code and trained models for the damage-detection network
+- Training, evaluation, and deployment scripts
+- The Power Line Damage Dataset (PLDD) and its documentation
+- Configuration files and instructions for reproducing the reported experiments
 
-- **Damage detection via GAN-based reconstruction**  
-  A GANomaly-style encoder-decoder reconstruction network that identifies damage by combining reconstruction inconsistency and discriminator response. The network is streamlined using small convolution kernels and fewer feature channels for embedded inference.
+## Method Overview
 
-- **PLDD dataset**  
-  A balanced dataset containing **440 images** (**220 normal** and **220 damaged**) collected using a **DJI M300 UAV**, including **artificially induced damage samples** for systematic evaluation.
+The proposed framework contains two main stages.
 
-- **Embedded deployment**  
-  The complete pipeline is deployed on an **NVIDIA Jetson Xavier NX** with TensorRT acceleration and validated through outdoor UAV flight tests in real inspection environments.
+### 1. Power-line segmentation
 
----
+PLSNet is a lightweight semantic-segmentation network designed to extract thin power-line structures from complex aerial backgrounds. It incorporates:
 
-## Results Snapshot
+- Multi-branch downsampling and feature fusion to reduce information loss
+- Multi-scale feature aggregation for improved contextual representation
+- Attention-based feature refinement
+- A lightweight architecture for real-time onboard inference
 
-Representative results reported in the manuscript include:
-- **Segmentation performance** evaluated on **PLD500** and **PLD-UAV** using mIoU and related metrics
-- **Damage detection performance** evaluated on **PLDD** with **99.09% classification accuracy**
-- **Real-world validation** via outdoor UAV flight tests using a **DJI M300** platform
+### 2. Power-line damage detection
 
-> Note: runtime depends on deployment settings and pipeline configuration. The final release will include benchmarking scripts and environment specifications.
+The segmented power lines are processed by a Generative Adversarial Network (GAN)-based reconstruction model. The method learns the distribution of normal power-line appearances and identifies potential damage using reconstruction inconsistencies and latent-representation differences.
 
+## Datasets
 
+The method is evaluated using the following datasets:
+
+- **PLD500:** a public dataset used to evaluate power-line segmentation
+- **PLD-UAV:** a public UAV-image dataset used to evaluate segmentation performance under diverse backgrounds
+- **PLDD:** the Power Line Damage Dataset constructed for this study
+
+PLDD contains 440 balanced samples:
+
+- 220 damaged power-line samples
+- 220 normal power-line samples
+
+The damaged samples include artificially induced conductor defects collected under controlled conditions using a DJI M300 UAV platform. PLDD is planned for public release after acceptance of the manuscript.
+
+## Deployment and Outdoor Validation
+
+The complete system is deployed on an iCrest onboard computer equipped with an NVIDIA Jetson Xavier NX. The implementation uses TensorRT for inference acceleration and is integrated with a DJI M300 UAV and an H20T camera.
+
+Outdoor experiments were conducted in residential and roadside environments to evaluate the practical applicability of the proposed method under different backgrounds and illumination conditions.
+
+## Main Results
+
+The manuscript reports:
+
+- Competitive segmentation performance on the PLD500 and PLD-UAV datasets
+- An F1-score of 97.74% and an inference speed of 87 FPS on PLD500
+- An F1-score of 85.46% and an inference speed of 87 FPS on PLD-UAV
+- A damage-classification accuracy of 99.09% on PLDD
+- End-to-end operation at approximately 12 FPS on the embedded platform
+- Outdoor validation in representative UAV inspection scenarios
+
+For the complete experimental settings, evaluation protocols, and comparisons, please refer to the manuscript.
 
 ## Citation
 
-If you use this repository in your research, please cite our paper after it is published. Final publication metadata will be updated here.
+Please cite the final published article once its bibliographic information becomes available. Until publication, use the following manuscript-level entry only when a citation is necessary:
 
-```text
-@article{Zhang2026_UAVLineDamage,
-  author  = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and Yichi Yang and Youmin Zhang},
-  title   = {UAV-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
-  journal = {IEEE Transactions on Industrial Electronics},
-  year    = {2026},
-  volume  = {},
-  number  = {},
-  pages   = {},
-  doi     = {}
+```bibtex
+@unpublished{Zhang2026UAVDamageDetection,
+  author = {Yulong Zhang and Xianghong Xue and Jing Xin and Lingxia Mu and Youmin Zhang},
+  title  = {Unmanned Aerial Vehicle-Based Damage Detection in Overhead Power Lines from Aerial Imagery},
+  note   = {Manuscript prepared for submission to Engineering Applications of Artificial Intelligence},
+  year   = {2026}
 }
+```
+
+The citation entry will be replaced with the final journal metadata, DOI, volume, and article number after publication.
+
+## Release Notice
+
+The repository is under active preparation. File organization, documentation, and interfaces may change before the complete research package is released.
